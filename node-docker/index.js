@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var wordgame = require('./wordgame/index.js');
 var short_urls = require('./short-urls.json');
 
@@ -34,7 +35,7 @@ for (var v in short_urls) {
 }
 
 if (process.env.NODE_ENV === 'production') {
-	expressApp.listen("/socket/socket");
+	expressApp.listen("/socket/socket", () => fs.chmod('/socket/socket', 0666));
 } else {
 	expressApp.listen(Number(process.env.PORT));
 }
