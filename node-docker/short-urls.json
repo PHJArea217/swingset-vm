@@ -1,0 +1,7 @@
+{
+	"readme": "Use this file to set redirect targets. Keys must begin with a / character.",
+	"/github": "https://github.com/PHJArea217",
+	"/gitlab": "https://gitlab.com/PHJArea217",
+	"/youtube": "https://www.youtube.com/channel/UCrj41CCV4lImTLcXTCWaMww",
+	"@b": "https://www.peterjin.org/blog/[!v].html"
+}
