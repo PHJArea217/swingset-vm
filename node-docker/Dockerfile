@@ -10,6 +10,6 @@ ADD wordgame.zip /
 RUN apt-get update && apt-get install -y busybox-static
 RUN mkdir -p /app/wordgame && cd /app/wordgame && busybox unzip /wordgame.zip
 RUN cd /app && yarn add express
-ADD index.js /app
+ADD index.js short-urls.json /app
 
 CMD su -c 'cd /app && rm -f /socket/socket && exec node index.js' node
