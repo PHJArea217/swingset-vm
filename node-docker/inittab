@@ -1,0 +1,3 @@
+::sysinit:/bin/sh -c 'D=/dev/vehicle-server-public; mkdir -p "$D" && chown vehicle-svr:nogroup "$D"'
+::respawn:/bin/su -s /bin/sh -c 'cd /app && rm -f /socket/socket && exec env VS_PUBLIC_DIR=/dev/vehicle-server-public node index.js' node
+::respawn:/bin/su -s /bin/sh -c 'cd /app/mtd-vehicle-server && exec env PUBLIC_DIR=/dev/vehicle-server-public sh download-loop.sh' vehicle-svr

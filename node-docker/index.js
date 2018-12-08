@@ -34,8 +34,10 @@ for (var v in short_urls) {
 	});
 }
 
+require('./more_middleware.js').addMiddleware(express, expressApp);
+
 if (process.env.NODE_ENV === 'production') {
 	expressApp.listen("/socket/socket", () => fs.chmod('/socket/socket', 0666));
 } else {
-	expressApp.listen(Number(process.env.PORT));
+	expressApp.listen(Number(process.env.PORT || 8080));
 }
